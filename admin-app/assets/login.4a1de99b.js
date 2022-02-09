@@ -1,0 +1,1 @@
+import{_ as t}from"./index.d1326097.js";import"./vue-router.2dfecb07.js";const o={},r=Vue.createTextVNode("Primary");function n(c,u){const e=Vue.resolveComponent("el-button");return Vue.openBlock(),Vue.createElementBlock("div",null,[Vue.createVNode(e,{type:"primary"},{default:Vue.withCtx(()=>[r]),_:1})])}var s=t(o,[["render",n]]);export{s as default};
