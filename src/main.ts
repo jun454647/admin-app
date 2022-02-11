@@ -1,13 +1,19 @@
-import { createApp } from 'vue'
+import { createApp, createVNode } from 'vue'
 import App from './App.vue'
 import router from './router'
-// import axios from 'axios'
+import "animate.css"
+import { createPinia } from 'pinia';
+import Icons from "@/config/icons"
+import components from '@/components/index';
 
-// element-plus
-// import ElementPlus from 'element-plus'
-// import 'element-plus/dist/index.css'
+const app = createApp(App);
 
-createApp(App)
-.use(router)
-// .use(ElementPlus)
-.mount('#app')
+// 注册全局组件
+const comps = { ...components, ...Icons }
+Object.keys(comps).map(key => {
+    app.component(key, comps[key as keyof typeof comps])
+})
+
+app.use(router)
+app.use(createPinia())
+app.mount('#app')

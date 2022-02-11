@@ -3,9 +3,12 @@ import vue from '@vitejs/plugin-vue'
 import VueSetupExtend from 'vite-plugin-vue-setup-extend' // setup name 增强 [https://juejin.cn/post/7054317318343491615]
 import AutoImport from 'unplugin-auto-import/vite' // API 自动导入 [https://juejin.cn/post/7054317318343491615]
 import ViteImages from 'vite-plugin-vue-images' // 自动导入图片 [https://juejin.cn/post/7054317318343491615]
-import path from 'path'
+import { resolve } from 'path'
 import Visualizer from 'rollup-plugin-visualizer' // 打包分析插件 
 import injectExternals from 'vite-plugin-inject-externals'
+import ElementPlus from 'unplugin-element-plus/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,7 +18,15 @@ export default defineConfig({
         AutoImport({
             // 可以自定义文件生成的位置，默认是根目录下，使用ts的建议放src目录下
             dts: 'src/auto-imports.d.ts',
-            imports: ['vue', 'vue-router']
+            imports: ['vue', 'vue-router'],
+            resolvers: [ElementPlusResolver()]
+        }),
+        ElementPlus({
+            // 引入的样式的类型，可以是css、sass、less等，
+            useSource: true
+        }),
+        Components({
+            resolvers: [ElementPlusResolver()],
         }),
         ViteImages({
             dirs: ['src/assets/images'] // 指明图片存放目录
@@ -27,22 +38,22 @@ export default defineConfig({
         }),
         injectExternals({
             // The custom injection location will replace the corresponding text in index.html
-            // injectTo: '<!-- Custom placeholder for vite plugin inject externals -->',
             modules: [
                 {
-                    name: 'vue',
-                    global: 'Vue',
-                    path: 'https://unpkg.com/vue@3.2.19/dist/vue.global.prod.js'
+                    name: 'animate.css',
+                    path: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'
                 }
             ]
         })
     ],
     resolve:{
         alias:{
-          '@': path.resolve(__dirname,'src'),
-          '@assets': path.resolve(__dirname,'src/assets'),
-          '@components': path.resolve(__dirname,'src/components'),
-          '@views': path.resolve(__dirname,'src/views')
+          '@': resolve(__dirname,'src'),
+          '@assets': resolve(__dirname,'src/assets'),
+          '@components': resolve(__dirname,'src/components'),
+          '@views': resolve(__dirname,'src/views'),
+          '@config': resolve(__dirname,'src/config'),
+          '@store': resolve(__dirname,'src/store')
         }
     },
     css: {
