@@ -7,6 +7,7 @@
             <rap-icon icon="DataLine"></rap-icon>
         </el-button>
 
+        <!-- toolbar config -->
         <el-drawer v-model="drawer"
             title="I am the title"
             :modal="true"

@@ -7,7 +7,10 @@ declare module 'vue' {
     ElButton: typeof import('element-plus/es')['ElButton']
     ElDrawer: typeof import('element-plus/es')['ElDrawer']
     ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElTable: typeof import('element-plus/es')['ElTable']
+    ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     Icon: typeof import('./src/components/icon/index.vue')['default']
+    Popover: typeof import('./src/components/popover/index.vue')['default']
   }
 }
 

@@ -32,11 +32,11 @@ const store = useConfig();
 <style lang="scss" scoped>
 .rap-container {
     padding-left: var(--rp-aside-width);
-    transition: all .3s linear .1s;
+    transition: all .3s ease-in-out;
 
     &.collapse {
         padding-left: var(--rp-aside-collapse-width);
-        transition: all .3s linear .1;
+        transition: all .3s ease-in-out;
     }
 }
 
