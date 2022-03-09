@@ -27,6 +27,7 @@
         "vite-plugin-inject-externals": "^1.1.1",
         "vite-plugin-vue-images": "^0.6.1",
         "vite-plugin-vue-setup-extend": "^0.4.0",
+        "vue-global-api": "^0.4.1",
         "vue-router": "^4.0.12",
         "vue-tsc": "^0.29.8"
     }

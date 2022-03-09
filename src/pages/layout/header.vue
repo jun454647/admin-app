@@ -24,7 +24,7 @@ import personal from "@/pages/layout/components/personal.vue"
     position: sticky;
     left: 0;
     top: 0;
-    z-index: 3;
+    z-index: 9;
     padding: 0 15px;
     box-sizing: border-box;
     display: flex;

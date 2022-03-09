@@ -14,6 +14,9 @@
 
         <!-- 工具 -->
         <RPToolbar v-if="website.toolbar" class="animate__animated animate__fadeInRight"/>
+
+        <!-- Back top -->
+        <el-backtop />
     </div>
 </template>
 

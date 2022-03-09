@@ -29,7 +29,8 @@ export default defineConfig({
             resolvers: [ElementPlusResolver()],
         }),
         ViteImages({
-            dirs: ['src/assets/images'] // 指明图片存放目录
+            dirs: ['src/assets/images'], // 指明图片存放目录
+            extensions: ['jpg', 'jpeg', 'png', 'svg', 'webp']
         }),
         Visualizer({
             open: true,

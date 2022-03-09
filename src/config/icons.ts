@@ -5,7 +5,10 @@ import {
     Edit,
     DataLine,
     DArrowLeft,
-    DArrowRight
+    DArrowRight,
+    ArrowRightBold,
+    Check,
+    Plus,
 } from '@element-plus/icons-vue';
 
   
@@ -15,5 +18,8 @@ export default {
     Edit,
     DataLine,
     DArrowLeft,
-    DArrowRight
+    DArrowRight,
+    ArrowRightBold,
+    Check,
+    Plus,
 }

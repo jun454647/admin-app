@@ -1,10 +1,16 @@
 // 常量
+$--color-primary: #7367f0 !default;
+$--color-white: #ffffff !default;
 
 // 需要根据主题修改的
 :root {
-    --rp-primary-color: #7367f0;
+    --rp-primary-color: #{$--color-primary};
     --rp-header-height: 65px;
     --rp-box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, .15);
+    --rp-box-shadow-1: 0px 0px 40px 0px rgba(82, 63, 105, .15);
+    --rp-box-shadow-2: 0px 0px 30px 0px rgba(82, 63, 105, .15);
+    --rp-box-shadow-3: 0px 0px 20px 0px rgba(82, 63, 105, .15);
+    --rp-box-shadow-4: 0px 0px 10px 0px rgba(82, 63, 105, .15);
 
     --rp-border-radius: 10px;
     --rp-border-radius-1: 4px;
@@ -17,11 +23,23 @@
     --rp-aside-collapse-width: 60px; // 侧边栏折叠宽度
     --rp-aside-menu-bg-color: #1e1e2d;
 
+    --rp-drawer-header-bg-color: rgba(77, 89, 149, 0.9);
 }
 
 // Element-plus
 :root {
-    --el-color-primary: #7367f0 !important;
+    --el-color-primary: #{$--color-primary} !important;
+    --el-color-primary-light-1: mix(#{$--color-white}, #{$--color-primary}, 10%) default;
+    --el-color-primary-light-2: mix(#{$--color-white}, #{$--color-primary}, 20%) default;
+    --el-color-primary-light-3: mix(#{$--color-white}, #{$--color-primary}, 30%) default;
+    --el-color-primary-light-4: mix(#{$--color-white}, #{$--color-primary}, 40%) default;
+    --el-color-primary-light-5: mix(#{$--color-white}, #{$--color-primary}, 50%) default;
+    --el-color-primary-light-6: mix(#{$--color-white}, #{$--color-primary}, 60%) default;
+    --el-color-primary-light-7: mix(#{$--color-white}, #{$--color-primary}, 70%) default;
+    --el-color-primary-light-8: mix(#{$--color-white}, #{$--color-primary}, 80%) default;  
+    --el-color-primary-light-9: mix(#{$--color-white}, #{$--color-primary}, 90%) default;
+
+    --el-button-border-color: #{$--color-primary} !important;
 }
 
 body {
@@ -40,6 +58,10 @@ body {
 
 .el-drawer{
     box-shadow: var(--rp-box-shadow) !important;
+
+    .el-drawer__footer {
+        box-shadow: var(--rp-box-shadow-4);
+    }
 }
 
 .el-overlay {
@@ -48,4 +70,8 @@ body {
 
 .el-popup-parent--hidden {
     overflow: hidden;
+}
+
+.el-button--primary.is-plain {
+    border-color: var(--el-color-primary-light-1);
 }

@@ -1,10 +1,12 @@
 
 <template>
-    <router-view v-slot="{ Component }">
-        <transition name="el-fade-in">
-            <component :is="Component" />
-        </transition>
-    </router-view>
+    <el-config-provider>
+        <router-view v-slot="{ Component }">
+            <transition name="el-fade-in">
+                <component :is="Component" />
+            </transition>
+        </router-view>
+    </el-config-provider>
 </template>
 
 <script setup lang="ts">

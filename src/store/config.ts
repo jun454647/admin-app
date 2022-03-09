@@ -1,9 +1,10 @@
 import { defineStore } from "pinia";
+import Config from "@/config/website"
 
 export const useConfig = defineStore({
     id: "config",
     state: ()=> ({
-        collapse: false
+        collapse: Config.collapse
     }),
     actions: {
         setCollapse (bol: any) {
